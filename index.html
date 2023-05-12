@@ -285,6 +285,126 @@
         </v-row>
         <span>
           
+            <a class="index-article-header-category font-weight-bold" href="/2023/05/12/CUDA-learning-notes/">Uncategorized></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2023/05/12/CUDA-learning-notes/">CUDA learning notes</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          @[toc]
+cuda tutorial这是我个人学习过程中的一些笔记，菜鸟一枚。抱歉所有的图都挂了，有空的时候慢慢恢复。cuda programming guideNVIDIA best practice guideCS344 udacity website
+
+got an overview on the usage of stereo camera based on Yingcai’s code
+
+communication pattern
+map一对一，每个pix执行同样的函数，比如×2
+gather多对一，比如图像模糊
+scatter同一个线程尝试写到许多memory，一对多，可...
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2023/05/12/CUDA-learning-notes/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2023-05-12
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/2023/05/12/Hector-quadrotor-from-PID-to-RPT/">Uncategorized></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2023/05/12/Hector-quadrotor-from-PID-to-RPT/">Hector quadrotor: from PID to RPT</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          
+本博客主要记录在修改hector quadrotor 仿真器中控制器模块的一些经历。有用的参考：知乎gazebo ctrl
+
+算法原始控制器采用级联pid。
+
+外环：位置环，也接收速度输入，作为前馈直接加到输出上。使用PID。
+内环：速度环，可以和位置环连起来用，也可以单独用。单独用的话，就接收速度指令。连起来的话，那么输入就是外环的输出，屏蔽收到的外界速度指令。。计算出的是wrench_，扭力。有torque和force,在这里很奇怪，xy方向force都是0，而xyz轴的torque都是根据acceleration算出来的。
+看了新版的controller代码发现，旧版是用Pid省...
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2023/05/12/Hector-quadrotor-from-PID-to-RPT/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2023-05-12
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+          </v-col>
+        </v-row>
+        <span>
+          
+            <a class="index-article-header-category font-weight-bold" href="/2023/05/12/Notes-for-CUPQ/">Uncategorized></a>
+           
+        </span> 
+        <a class="index-article-header-title font-weight-medium" href="/2023/05/12/Notes-for-CUPQ/">Notes for CUPQ</a>
+      </div>
+      
+      <div class="index-article-content">
+        
+          cupq 是github上一个cuda实现的优先级队列的库，适用于many-to-many的最短路计算。先上链接: cuda-pq
+作者思想是从二叉堆演化而来的。先简单介绍二叉堆。二叉堆的结构性：堆在逻辑上就是一个完全二叉树（方便计算孩子和父亲在向量中的index），在物理上是一个向量。二叉堆的堆序性是，每个父亲节点要比所有儿子要小。二叉堆主要有insert,pop操作。
+
+pop每次pop操作，都弹出最顶端的root元素，这是在heap中最小的。之后为了保持树形结构，会把最后一个元素放到root。这时候，堆序性不能保证，因此，需要用下滤操作（propagate down），从不满足堆序...
+        
+      </div>
+      
+      <div class="index-article-readmore ">
+        <v-btn text href="/2023/05/12/Notes-for-CUPQ/">Read More</v-btn>
+      </div>
+      <v-divider></v-divider>
+    </article> 
+  
+    <article class="index-article">
+      
+      <div class="index-article-header">
+        <v-row no-gutters>
+          <v-col cols="auto">
+            <div class="index-article-header-date font-weight-medium">
+              2023-05-12
+            </div>
+          </v-col>
+          <v-spacer></v-spacer>
+          <v-col cols="auto">
+            
+          </v-col>
+        </v-row>
+        <span>
+          
             <a class="index-article-header-category font-weight-bold" href="/2023/05/12/Notes-volumetri-literature/">Uncategorized></a>
            
         </span> 
@@ -369,7 +489,18 @@ In ...
       
       <div class="index-article-content">
         
-          
+          GDB, CUDA-GDB, CUDA MEMCHECKenter gdb\ cuda-gdb
+if debug common cpp project:if excutable binary is called “detect” after compile, just type
+
+1gdb ./detect
+in terminal.
+
+if debug ros workspace:refer ROS WIKI
+
+to run a node in cuda-gdb: 
+1rosrun --prefix &quot;cuda-gdb --args&quot; edt edt_node 
+
+t...
         
       </div>
       

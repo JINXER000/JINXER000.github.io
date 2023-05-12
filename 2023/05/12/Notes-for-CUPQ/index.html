@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
+    
+     
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.30/dist/vuetify.min.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+    
+
+
+
+
+
+
+
+    
+    
+          
+
+    
+    
+    
+    
+    <title>
+        
+            Notes for CUPQ | Yizhou (Joseph) Chen
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <div id="app">
+        <v-app>
+            <v-content id="page">
+                <v-container fluid>
+                    <v-row>
+                        <v-col cols="2" class="d-none d-md-block">
+                            <div id="sidebar" class="float-right">
+    <a href="/" rel="home">
+        <v-avatar size=96>
+            <img id="logo" src="https://avatars.githubusercontent.com/u/25702838?v=4">     
+        </v-avatar> 
+    </a>
+    <v-divider></v-divider>
+    <div class="mini-menu">
+        <v-btn icon href="/">
+            <v-icon>home</v-icon>
+        </v-btn>
+        <v-btn icon href="/categories/">
+            <v-icon>folder</v-icon>
+        </v-btn>
+        <v-btn icon href="/tags/">
+            <v-icon>bookmark</v-icon>
+        </v-btn>
+        <v-btn icon @click="SetNightMode">
+            <v-icon>{{ nightMode }}</v-icon>
+        </v-btn>
+    </div>
+    <v-list id="main-menu" class="font-weight-bold" flat>
+        
+            
+            <v-list-item href="/archives/" link>
+            <v-list-item-icon><v-icon>archive</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                Archives
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="/about/" link>
+            <v-list-item-icon><v-icon>account_circle</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                CV
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="https://github.com/JINXER000/GIE-mapping" link>
+            <v-list-item-icon><v-icon>rss_feed</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                Open Source
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="https://garybear.cn/hexo-theme-insulin/#/" link>
+            <v-list-item-icon><v-icon>insert_drive_file</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                Doc
+            </v-list-item-content>
+            </v-list-item>
+        
+    </v-list>
+    <v-divider></v-divider>
+    
+        <div class="post-toc">
+            <a href="/2023/05/12/Notes-for-CUPQ/" class="toc-header">Table of Contents</a>
+            <div class="toc-content">
+                
+            </div>
+        </div>
+    
+
+    <div id="footer">
+        <div class="footer-social">
+            
+                
+                <v-btn icon href="/josephchen@link.cuhk.edu.hk" target="_blank">
+                    <v-icon>fas fa-envelope</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://github.com/jinxer000" target="_blank">
+                    <v-icon>fab fa-github</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="http://www.mae.cuhk.edu.hk/~usr/" target="_blank">
+                    <v-icon>fab fa-linkedin</v-icon>
+                </v-btn>
+            
+        </div>
+        <v-divider></v-divider>
+        <div class="footer-content">
+            
+                <span id="busuanzi_container_site_uv" style="display: none;"> 
+                    Total Visitors <span id="busuanzi_value_site_uv"></span>
+                </span>
+                <br>
+            
+            <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a></span><br>
+            <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+            <span>
+                &copy; 2019 - 2023 
+                Joseph
+            </span>
+        </div>
+    </div>
+</div>
+
+                        </v-col>
+                        <v-col cols="12" md="10">
+                            <v-row>
+  <v-col cols="12" md="8" align-self="end">
+    <div id="site-header">
+      <div id="site-title">
+        <a href="/" rel="home">Yizhou (Joseph) Chen</a>
+      </div>
+      <div id="site-description"></div>
+      <div id="mobile-menu" class="d-block d-md-none">
+        <v-text-field label="Please type key words" data-src="search.xml" v-model="searchHeaderValue" prepend-inner-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,false)"></v-text-field>
+        <div class="mobile-mini-menu">
+          <v-btn icon href="/">
+              <v-icon>home</v-icon>
+          </v-btn>
+          <v-btn icon href="/categories/">
+              <v-icon>folder</v-icon>
+          </v-btn>
+          <v-btn icon href="/tags/">
+              <v-icon>bookmark</v-icon>
+          </v-btn>
+          <v-btn icon @click="SetNightMode">
+              <v-icon>{{ nightMode }}</v-icon>
+          </v-btn>
+          
+            
+            <v-btn icon href="/archives/">
+              <v-icon>archive</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="/about/">
+              <v-icon>account_circle</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="https://github.com/JINXER000/GIE-mapping">
+              <v-icon>rss_feed</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="https://garybear.cn/hexo-theme-insulin/#/">
+              <v-icon>insert_drive_file</v-icon>
+            </v-btn>
+          
+        </div>
+      </div>    
+    </div>
+  </v-col>  
+  <v-col cols="4" align-self="end" class="d-none d-md-block">
+    <v-col align-self="end">
+      <v-text-field label="Please type key words" data-src="search.xml" v-model="searchHeaderValue" prepend-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,false)"></v-text-field>
+    </v-col> 
+  </v-col>
+</v-row>
+
+                            <v-card class="elevation-2 post-card">
+    
+    
+        <div class="post-header">
+  <a class="post-header-title font-weight-medium" href="/2023/05/12/Notes-for-CUPQ/">Notes for CUPQ</a>
+  <div class="post-header-meta">   
+    <span>
+      <v-icon color="">event</v-icon>
+      Posted on:&nbsp;2023-05-12
+    </span>
+    <span>
+      <v-icon color="">event_available</v-icon>
+      Edited on:&nbsp;2023-05-12
+    </span>
+    <span>
+      <v-icon color="">folder</v-icon>
+      In:&nbsp;Uncategorized
+    </span>
+    
+    <span>
+      <v-icon color="">visibility</v-icon>
+      Views:&nbsp;<span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+    </span>
+    
+  </div>
+</div>
+
+    
+    
+    
+    
+    <div class="post-content typo">
+        <p>cupq 是github上一个cuda实现的优先级队列的库，适用于many-to-many的最短路计算。先上链接: <a target="_blank" rel="noopener" href="https://github.com/crosetto/cupq">cuda-pq</a></p>
+<p>作者思想是从二叉堆演化而来的。先简单介绍二叉堆。<br>二叉堆的结构性：堆在逻辑上就是一个完全二叉树（方便计算孩子和父亲在向量中的index），在物理上是一个向量。二叉堆的堆序性是，每个父亲节点要比所有儿子要小。二叉堆主要有insert,pop操作。</p>
+<ul>
+<li>pop<br>每次pop操作，都弹出最顶端的root元素，这是在heap中最小的。之后为了保持树形结构，会把最后一个元素放到root。这时候，堆序性不能保证，因此，需要用下滤操作（propagate down），从不满足堆序性的顶端开始，比较父亲和所有儿子中的最小值(minchild)，如果minchild比父亲小，那么需要交换二者的值。一直到满足堆序性为止。<br><img src="https://img-blog.csdnimg.cn/20200307201558533.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pJTlhFUg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>insert<br>每次insert一个值，都会把它放到向量的末尾，之后用上滤维持堆序性。与下滤类似，上滤是比较插入元素是否比其父亲要小，如果小的话，需要交换二者位置。可能会进行多次交换，直到堆序性满足。<br><img src="https://img-blog.csdnimg.cn/20200307201515813.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pJTlhFUg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>机智的你可能会发现，每次交换有3次操作，因此如果一开始把插入值备份，如果父亲比插入值大，那么直接把父亲复制到儿子身上，直到父亲比插入值小，这时把插入值放在儿子身上，堆序性满足。</li>
+</ul>
+<p>作者没有用经典二叉堆，而是用32叉堆，也就是每个node有32个儿子。每个node自身有32个元素，每个元素是一个pair,&lt;32 bit float, 32 bit integer&gt;, 也就是&lt;点到source 的距离，点在图中的位置&gt;。pair是已经根据distance排序好的，最小的元素在最左边，称为top。使用32是为了方便线程束(warp)的原子操作。</p>
+<ul>
+<li>pop</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D_F <span class="type">index_t</span> <span class="title">pop</span><span class="params">(Array&lt;<span class="type">value_t</span>, Limit&gt; &amp;sTops, <span class="type">int</span> &amp;sPosition,</span></span></span><br><span class="line"><span class="params"><span class="function">                <span class="type">index_t</span> &amp;sTop2)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="type">index_t</span> ret = sTop2;</span><br><span class="line">  <span class="keyword">if</span> (sPosition == <span class="number">0</span>) &#123;</span><br><span class="line">    mData[mSize - <span class="number">1</span>].mData = <span class="number">0x0fffffff</span>; <span class="comment">// reset all</span></span><br><span class="line">    mData[mSize - <span class="number">1</span>].mData2 = <span class="number">0</span>;         <span class="comment">// reset all</span></span><br><span class="line">    <span class="built_in">updateTop</span>(sTops, mSize - <span class="number">1</span>);</span><br><span class="line">    --mSize;</span><br><span class="line">    <span class="built_in">setPosition</span>(sPosition, WarpSize);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (mSize &gt; <span class="number">0</span>) &#123; <span class="comment">// otherwise do nothing (popping from an empty container)</span></span><br><span class="line">    <span class="keyword">if</span> (sPosition == <span class="number">0</span>)</span><br><span class="line">      <span class="built_in">setTop</span>(sTops, <span class="number">0</span>, <span class="number">0x0fffffff</span>);</span><br><span class="line">    mData[<span class="number">0</span>].<span class="built_in">replaceSmallestDiscard</span>(mData[mSize - <span class="number">1</span>].<span class="built_in">pop</span>(sPosition));</span><br><span class="line">    <span class="type">int</span> pos = sPosition - <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">setPosition</span>(sPosition, pos);</span><br><span class="line">    <span class="built_in">updateTop</span>(sTops, mSize - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">updateTop</span>(sTops, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (mSize &gt; <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">auto</span> sTop2 = __shfl_sync(<span class="number">0xffffffff</span>, mData[<span class="number">0</span>].mData2, <span class="number">0</span>, WarpSize);</span><br><span class="line">      DevicePair&lt;<span class="type">value_t</span>, <span class="type">index_t</span>&gt; tmp =</span><br><span class="line">          <span class="built_in">propagateDown</span>(<span class="built_in">make_DevicePair</span>(sTops[<span class="number">0</span>], sTop2), sTops);</span><br><span class="line">      <span class="keyword">if</span> (threadIdx.x == <span class="number">0</span>) &#123;</span><br><span class="line">        mData[<span class="number">0</span>].mData = tmp.first;</span><br><span class="line">        mData[<span class="number">0</span>].mData2 = tmp.second;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">updateTop</span>(sTops, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">updateTop2</span>(sTop2);</span><br><span class="line">  <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>每次pop，弹出第一个元素，如果此时向量不为空，那么把最后一个元素补在第一个node(而不是元素）处。此处调用replaceSmallestDiscard函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D_F <span class="type">void</span> <span class="title">replaceSmallestDiscard</span><span class="params">(DevicePair&lt;Type, Type2&gt; value)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// instructions in PTX:</span></span><br><span class="line">  <span class="comment">// create bitmask 00000111</span></span><br><span class="line">  <span class="type">int</span> vote = __ballot_sync(<span class="number">0xffffffff</span>, mData &lt;= value.first);</span><br><span class="line">  <span class="comment">// find the position of first &quot;1&quot; in the warp</span></span><br><span class="line">  <span class="type">int</span> b;</span><br><span class="line">  <span class="built_in">asm</span>(<span class="string">&quot;bfind.u32 %0, %1;&quot;</span> : <span class="string">&quot;=r&quot;</span>(b) : <span class="string">&quot;r&quot;</span>(vote));</span><br><span class="line">  <span class="keyword">if</span> (b == <span class="number">-1</span> <span class="comment">/*I&#x27;m the smallest*/</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (threadIdx.x &lt;= b) &#123;<span class="comment">// top has became the parent, so shift left 1 place</span></span><br><span class="line">    mData = __shfl_down_sync(vote, mData, <span class="number">1</span>);</span><br><span class="line">    mData2 = __shfl_down_sync(vote, mData2, <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// insert in the empty spot</span></span><br><span class="line">  <span class="keyword">if</span> (threadIdx.x == b) &#123;</span><br><span class="line">    mData = value.first;</span><br><span class="line">    mData2 = value.second;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后一个元素m放到第一个Node里排序，先用__ballot()来判断第一个Node里32个元素是否比m大，如果大的话就是1,得到一个掩码类似0000011111. 之后，用bfind找到第一个1出现的地方，这里就是5. 然后，对每一个threadId.x&lt;b的线程，使用__shfl_down_sync()，等于把node[0]中1–6的元素都向前移动一格，此时5和6是一样的，那么把m插到5处。<br><img src="https://img-blog.csdnimg.cn/20200307204254321.png" alt="在这里插入图片描述"><br>这个时候，node[0]对了，但他和儿子之间不一定满足堆序性。此时需要进行下滤，propagateDown函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function">D_F __forceinline__ DevicePair&lt;<span class="type">value_t</span>, <span class="type">index_t</span>&gt;</span></span><br><span class="line"><span class="function">  <span class="title">propagateDown</span><span class="params">(DevicePair&lt;<span class="type">value_t</span>, <span class="type">index_t</span>&gt; n, Array&lt;<span class="type">value_t</span>, Limit&gt; &amp;sTops)</span> </span>&#123;</span><br><span class="line"><span class="comment">/// ret is the pair of the new root</span></span><br><span class="line">    <span class="keyword">if</span> (mSize &lt; <span class="number">2</span>) <span class="comment">// no children</span></span><br><span class="line">      <span class="keyword">return</span> n;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> mchild = <span class="built_in">minChild</span>(sTops, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    DevicePair&lt;<span class="type">value_t</span>, <span class="type">index_t</span>&gt; ret = n;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (n.first &lt; sTops[mchild])</span><br><span class="line">      <span class="comment">// heap property is OK, just return</span></span><br><span class="line">      <span class="keyword">return</span> n;</span><br><span class="line">      </span><br><span class="line">    ret = mData[mchild].<span class="built_in">replaceSmallest</span>(n);</span><br><span class="line">    <span class="built_in">updateTop</span>(sTops, mchild);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (mSize &lt;= Arity + <span class="number">1</span>) <span class="comment">// index is a leaf already (1&lt;=index&lt;=33)</span></span><br><span class="line">      <span class="keyword">return</span> ret;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> index = mchild;</span><br><span class="line"></span><br><span class="line">    <span class="type">index_t</span> sTop2 = mData[index].mData2;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// broadcast, sTop2  are all same in 1 warp</span></span><br><span class="line">    sTop2 = __shfl_sync(<span class="number">0xffffffff</span>, sTop2, <span class="number">0</span>, WarpSize);</span><br><span class="line"></span><br><span class="line">    <span class="type">bool</span> leaf = <span class="built_in">child</span>(index, <span class="number">0</span>) &gt;= mSize;</span><br><span class="line">    <span class="keyword">while</span> (!leaf) &#123;</span><br><span class="line">      mchild = <span class="built_in">minChild</span>(sTops, index);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (sTops[index] &lt;= sTops[mchild]) &#123;</span><br><span class="line">        <span class="comment">// OK, heap property is fine</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">        n = <span class="built_in">make_DevicePair</span>(sTops[index], sTop2);</span><br><span class="line">        <span class="comment">// swap the min in the two warps (parent and child):</span></span><br><span class="line">        <span class="comment">// do the swap between the 2 warps (a double replace)</span></span><br><span class="line">        <span class="keyword">if</span> (threadIdx.x == <span class="number">0</span>) &#123;</span><br><span class="line">          mData[index].mData = mData[mchild].mData;</span><br><span class="line">          mData[index].mData2 = mData[mchild].mData2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//  mData[index]&lt;--&gt;mData[mchild]</span></span><br><span class="line">        mData[mchild].<span class="built_in">replaceSmallestDiscard</span>(</span><br><span class="line">            n); <span class="comment">// throw away the returned value (used it already above)</span></span><br><span class="line">        <span class="built_in">updateTop</span>(sTops, mchild);</span><br><span class="line">        <span class="built_in">updateTop</span>(sTops, index);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// get the next min</span></span><br><span class="line">        sTop2 = mData[mchild].mData2;</span><br><span class="line">        sTop2 = __shfl_sync(<span class="number">0xffffffff</span>, sTop2, <span class="number">0</span>, WarpSize);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      index = mchild;</span><br><span class="line">      leaf = <span class="built_in">child</span>(index, <span class="number">0</span>) &gt;= mSize;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>比较此时node[0].top和儿子们的tops，如果node[0].top比儿子们tops中最小的要大，那么不满足堆序性。怎么看出来儿子们哪个更小？要用minChild()函数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D_F <span class="type">int</span> <span class="title">minChild</span><span class="params">(Array&lt;<span class="type">value_t</span>, Limit&gt; &amp;sTops, <span class="type">int</span> index)</span> </span>&#123;</span><br><span class="line">  <span class="built_in">static_assert</span>(Arity == <span class="number">32</span>, <span class="string">&quot;if you want to generalize change also the &quot;</span></span><br><span class="line">                             <span class="string">&quot;lines below (assuming 32-way heap)&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">auto</span> firstchild_ = <span class="built_in">child</span>(index, <span class="number">0</span>);</span><br><span class="line">  <span class="type">bool</span> leaf = firstchild_ &gt; mSize; <span class="comment">// index is a leaf, no childs</span></span><br><span class="line">  <span class="type">int</span> nchild = (mSize - <span class="number">1</span>) % Arity;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (leaf &amp;&amp; nchild == <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> firstchild_;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="type">index_t</span> ret, ret1;</span><br><span class="line">  <span class="type">value_t</span> reg0, reg1;</span><br><span class="line"></span><br><span class="line">  ret = threadIdx.x;</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> id = <span class="built_in">child</span>(index, threadIdx.x);</span><br><span class="line">  <span class="keyword">if</span> (id &gt;= mSize)</span><br><span class="line">    reg0 =</span><br><span class="line">        <span class="number">0x0fffffff</span>; <span class="comment">// avoid access out of bound (and huge shmem allocation)</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    reg0 = sTops[id]; <span class="comment">// mData[id].top();</span></span><br><span class="line"></span><br><span class="line">  reg1 = __shfl_down_sync(<span class="number">0xffffffff</span>, reg0, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">16</span>; i *= <span class="number">2</span>) &#123;</span><br><span class="line">    ret1 = __shfl_down_sync(<span class="number">0xffffffff</span>, ret, i);</span><br><span class="line">    <span class="keyword">if</span> (reg0 &gt; reg1) &#123;</span><br><span class="line">      ret = ret1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (leaf &amp;&amp; nchild &lt;= i) &#123;</span><br><span class="line">      ret = __shfl_sync(<span class="number">0xffffffff</span>, ret, <span class="number">0</span>, WarpSize);</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">child</span>(index, ret);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (reg0 &gt; reg1) &#123;</span><br><span class="line">      reg0 = reg1;</span><br><span class="line">    &#125;</span><br><span class="line">    reg1 = __shfl_down_sync(<span class="number">0xffffffff</span>, reg0, i * <span class="number">2</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ret = __shfl_sync(<span class="number">0xffffffff</span>, ret, <span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">child</span>(index, ret);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>具体在做什么，用下图可以一目了然：<br>在第一轮中，reg0&#x3D;sTops[id]就是这个线程掌管的儿子的top，reg1就是右边一个线程的值，如果右边比左边的小，那么把右边直接复制到左边。一直迭代到最后，reg0就是最小的top，ret就是reg0所在的线程，将其广播后（__shfl_sync），每个线程返回值都是儿子们中top最小的那个的index.<br><img src="https://img-blog.csdnimg.cn/20200307202444680.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pJTlhFUg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>得到最小的儿子，用父亲的top和儿子的top比较，不满足堆序性的话二者交换。这里，父亲的top直接用最小儿子的top替换，但是父亲的top在儿子这里不一定是top了，因此要调用replaceSmallestDiscard（）来进行排序，原理和replaceSmallest()类似，只不过没有返回值。直到儿子是leaf，那么就可以结束。<br>需要注意的是，在更新heap(mData，一个pair组成的数组)的同时，还会更新share memory中的sTop2,sTop,sPosition。一个block里面有4个warp，也就是有4个sTop2,sTop,sPosition。sTop是一个Limit大小的数组，记录了heap里面每一个Node的top值。sTop2记录了root的top。sPosition记录的是整个Heap的大小。以上三个值只能由threadId.x&#x3D;&#x3D;0的线程进行更新，其他线程只能读取，作为右值，否则会造成bank conflict。比如想知道某个Node的top的时候。如果想更新heap，必须先更新local memory中的mData，再warp中指定一个线程将其写到shmem中。<br>不同warp计算不同source node开始的最短路问题。每个线程里都有一个heap，但是由于shmem，每个heap在pop和insert时候都是一样的。问题来了，如果同时insert同一个pair，会怎样。。。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/MeirBon/CudaTracer">其他可以尝试的ray tracing库</a></p>
+
+    </div>
+    <!--文末结束语-->
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="fas fa-heart"></i> The End --- </div>
+    
+    <!--页脚广告-->
+    
+    <v-divider></v-divider>
+    
+    <div class="post-nav">             
+        
+            <div class="post-nav-button float-left">
+                <v-icon>chevron_left</v-icon>
+                <a class="font-weight-bold text-left" href="/2023/05/12/Hector-quadrotor-from-PID-to-RPT/">
+                    Hector quadrotor: from PID to RPT
+                </a>
+            </div>
+              
+          
+            <div class="post-nav-button float-right">
+                <a class="font-weight-bold text-right" href="/2023/05/12/Notes-volumetri-literature/">      
+                    Notes_volumetri_literature
+                </a>
+                <v-icon>chevron_right</v-icon>
+            </div>
+        
+    </div>
+</v-card>
+
+
+
+        
+                            <div id="mobile-footer" class="d-block d-md-none">
+                                <v-divider></v-divider>
+                                <div id="mobile-footer-content">
+                                    <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a> &nbsp; Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+                                    <span> &copy; 2019 - 2023 Joseph</span>
+                                </div>
+                            </div>                   
+                        </v-col>                                            
+                    </v-row>
+                </v-container>
+            </v-content>
+        </v-app>
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.30"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-base64@3.5.2/base64.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+
+</body>
+</html>

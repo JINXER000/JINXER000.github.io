@@ -41,8 +41,8 @@
     
     
     <title>
-          
-            Yizhou (Joseph) Chen
+        
+            Hector quadrotor: from PID to RPT | Yizhou (Joseph) Chen
         
     </title>
     
@@ -113,9 +113,12 @@
     </v-list>
     <v-divider></v-divider>
     
-        <v-list id="sub-menu" class="font-weight-medium" dense>
-            
-        </v-list>    
+        <div class="post-toc">
+            <a href="/2023/05/12/Hector-quadrotor-from-PID-to-RPT/" class="toc-header">Table of Contents</a>
+            <div class="toc-content">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A3%9E%E6%9C%BA%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">1.1.</span> <span class="toc-text">飞机坐标系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#control-interface"><span class="toc-number">2.</span> <span class="toc-text">control interface</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%92%8CPID%E5%AF%B9%E6%AF%94"><span class="toc-number">3.</span> <span class="toc-text">和PID对比</span></a></li></ol>
+            </div>
+        </div>
     
 
     <div id="footer">
@@ -211,76 +214,92 @@
   </v-col>
 </v-row>
 
-                            
-<v-card class="elevation-2 index-card">
-    <v-timeline class="timeline" dense>
+                            <v-card class="elevation-2 post-card">
+    
+    
+        <div class="post-header">
+  <a class="post-header-title font-weight-medium" href="/2023/05/12/Hector-quadrotor-from-PID-to-RPT/">Hector quadrotor: from PID to RPT</a>
+  <div class="post-header-meta">   
+    <span>
+      <v-icon color="">event</v-icon>
+      Posted on:&nbsp;2023-05-12
+    </span>
+    <span>
+      <v-icon color="">event_available</v-icon>
+      Edited on:&nbsp;2023-05-12
+    </span>
+    <span>
+      <v-icon color="">folder</v-icon>
+      In:&nbsp;Uncategorized
+    </span>
+    
+    <span>
+      <v-icon color="">visibility</v-icon>
+      Views:&nbsp;<span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+    </span>
+    
+  </div>
+</div>
+
+    
+    
+    
+    
+    <div class="post-content typo">
+        <ul>
+<li>本博客主要记录在修改hector quadrotor 仿真器中控制器模块的一些经历。<br>有用的参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/94575932">知乎gazebo ctrl</a></li>
+</ul>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>原始控制器采用级联pid。</p>
+<ul>
+<li>外环：位置环，也接收速度输入，作为前馈直接加到输出上。使用PID。</li>
+<li>内环：速度环，可以和位置环连起来用，也可以单独用。单独用的话，就接收速度指令。连起来的话，那么输入就是外环的输出，屏蔽收到的外界速度指令。。计算出的是wrench_，扭力。有torque和force,在这里很奇怪，xy方向force都是0，而xyz轴的torque都是根据acceleration算出来的。</li>
+<li>看了新版的controller代码发现，旧版是用Pid省略了从加速度到角加速度，再到扭矩的转换。所以正常流程是，world速度输入得到world加速度，转成base加速度(差了一个yaw)，再转换成base角加速度输出。在attitude controller里，base角加速度转成world角加速度，再转成body角加速度。这样，就可以转换到力矩空间，计算wrench和电机转速之类的了。</li>
+</ul>
+<h3 id="飞机坐标系"><a href="#飞机坐标系" class="headerlink" title="飞机坐标系"></a>飞机坐标系</h3><p>顺时针画上0123号电机。3号为x+,2号为y+。所以如果要有正的roll，那么0号向下，2号向上;要有正pitch, 3号向上，1号向下。</p>
+<h2 id="control-interface"><a href="#control-interface" class="headerlink" title="control interface"></a>control interface</h2><p>Controller is an important base class in ros.<br>It has 4 functions: </p>
+<ul>
+<li>starting, </li>
+<li>stopping, </li>
+<li>init, </li>
+<li>update.<br>All we need is to write a specific controller class which inherit the base class.<br>Then, export the class as a plugin. Controller manager would load this plugin when starting up.</li>
+</ul>
+<h2 id="和PID对比"><a href="#和PID对比" class="headerlink" title="和PID对比"></a>和PID对比</h2><p>飞机Z轴位置数据<br><img src="https://img-blog.csdnimg.cn/20200320105818817.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pJTlhFUg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200320103734946.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pJTlhFUg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>显然，PID动态性能不如RPT。</p>
+<p>飞控：<br><img src="https://img-blog.csdnimg.cn/20200320160631225.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pJTlhFUg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200503142140147.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pJTlhFUg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+    </div>
+    <!--文末结束语-->
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="fas fa-heart"></i> The End --- </div>
+    
+    <!--页脚广告-->
+    
+    <v-divider></v-divider>
+    
+    <div class="post-nav">             
         
-            
-            
-                <v-timeline-item class="timeline-header" color="secondary lighten-2">
-                    <a href="/archives/2023" class="timeline-title">2023</a>
-                    <span class="timeline-subtitle">Archives</span>
-                </v-timeline-item>
-                
-            
-            <v-timeline-item fill-dot small color="secondary lighten-2">
-                <div class="timeline-item-post d-none d-md-block">
-                    <span class="timeline-item-time">2023.05.12</span>
-                    <a href="/2023/05/12/CUDA-learning-notes/" class="timeline-item-title">CUDA learning notes</a>
-                </div>
-                <div class="timeline-item-post-mobile d-block d-md-none">
-                    <span class="timeline-item-time">2023.05.12</span><br>
-                    <a href="/2023/05/12/CUDA-learning-notes/" class="timeline-item-title">CUDA learning notes</a>
-                </div>
-                <v-divider></v-divider>
-            </v-timeline-item>
+            <div class="post-nav-button float-left">
+                <v-icon>chevron_left</v-icon>
+                <a class="font-weight-bold text-left" href="/2023/05/12/CUDA-learning-notes/">
+                    CUDA learning notes
+                </a>
+            </div>
+              
+          
+            <div class="post-nav-button float-right">
+                <a class="font-weight-bold text-right" href="/2023/05/12/Notes-for-CUPQ/">      
+                    Notes for CUPQ
+                </a>
+                <v-icon>chevron_right</v-icon>
+            </div>
         
-            
-            
-            <v-timeline-item fill-dot small color="secondary lighten-2">
-                <div class="timeline-item-post d-none d-md-block">
-                    <span class="timeline-item-time">2023.05.12</span>
-                    <a href="/2023/05/12/Hector-quadrotor-from-PID-to-RPT/" class="timeline-item-title">Hector quadrotor: from PID to RPT</a>
-                </div>
-                <div class="timeline-item-post-mobile d-block d-md-none">
-                    <span class="timeline-item-time">2023.05.12</span><br>
-                    <a href="/2023/05/12/Hector-quadrotor-from-PID-to-RPT/" class="timeline-item-title">Hector quadrotor: from PID to RPT</a>
-                </div>
-                <v-divider></v-divider>
-            </v-timeline-item>
-        
-            
-            
-            <v-timeline-item fill-dot small color="secondary lighten-2">
-                <div class="timeline-item-post d-none d-md-block">
-                    <span class="timeline-item-time">2023.05.12</span>
-                    <a href="/2023/05/12/Notes-for-CUPQ/" class="timeline-item-title">Notes for CUPQ</a>
-                </div>
-                <div class="timeline-item-post-mobile d-block d-md-none">
-                    <span class="timeline-item-time">2023.05.12</span><br>
-                    <a href="/2023/05/12/Notes-for-CUPQ/" class="timeline-item-title">Notes for CUPQ</a>
-                </div>
-                <v-divider></v-divider>
-            </v-timeline-item>
-        
-            
-            
-            <v-timeline-item fill-dot small color="secondary lighten-2">
-                <div class="timeline-item-post d-none d-md-block">
-                    <span class="timeline-item-time">2023.05.12</span>
-                    <a href="/2023/05/12/Notes-volumetri-literature/" class="timeline-item-title">Notes_volumetri_literature</a>
-                </div>
-                <div class="timeline-item-post-mobile d-block d-md-none">
-                    <span class="timeline-item-time">2023.05.12</span><br>
-                    <a href="/2023/05/12/Notes-volumetri-literature/" class="timeline-item-title">Notes_volumetri_literature</a>
-                </div>
-                <v-divider></v-divider>
-            </v-timeline-item>
-        
-    </v-timeline>
+    </div>
 </v-card>
 
-         
+
+
+        
                             <div id="mobile-footer" class="d-block d-md-none">
                                 <v-divider></v-divider>
                                 <div id="mobile-footer-content">
@@ -309,6 +328,12 @@
 
 
 
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
 
 
 
