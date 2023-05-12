@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
+    
+     
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.30/dist/vuetify.min.css" rel="stylesheet">
+    
+<link rel="stylesheet" href="/css/main.css">
+
+    
+    
+
+
+
+
+
+
+
+    
+    
+          
+
+    
+    
+    
+    
+    <title>
+        
+            Notes_volumetri_literature | Yizhou (Joseph) Chen
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+    <div id="app">
+        <v-app>
+            <v-content id="page">
+                <v-container fluid>
+                    <v-row>
+                        <v-col cols="2" class="d-none d-md-block">
+                            <div id="sidebar" class="float-right">
+    <a href="/" rel="home">
+        <v-avatar size=96>
+            <img id="logo" src="https://avatars.githubusercontent.com/u/25702838?v=4">     
+        </v-avatar> 
+    </a>
+    <v-divider></v-divider>
+    <div class="mini-menu">
+        <v-btn icon href="/">
+            <v-icon>home</v-icon>
+        </v-btn>
+        <v-btn icon href="/categories/">
+            <v-icon>folder</v-icon>
+        </v-btn>
+        <v-btn icon href="/tags/">
+            <v-icon>bookmark</v-icon>
+        </v-btn>
+        <v-btn icon @click="SetNightMode">
+            <v-icon>{{ nightMode }}</v-icon>
+        </v-btn>
+    </div>
+    <v-list id="main-menu" class="font-weight-bold" flat>
+        
+            
+            <v-list-item href="/archives/" link>
+            <v-list-item-icon><v-icon>archive</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                Archives
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="/about/" link>
+            <v-list-item-icon><v-icon>account_circle</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                CV
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="https://github.com/JINXER000/GIE-mapping" link>
+            <v-list-item-icon><v-icon>rss_feed</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                Open Source
+            </v-list-item-content>
+            </v-list-item>
+        
+            
+            <v-list-item href="https://garybear.cn/hexo-theme-insulin/#/" link>
+            <v-list-item-icon><v-icon>insert_drive_file</v-icon></v-list-item-icon>
+            <v-list-item-content>
+                Doc
+            </v-list-item-content>
+            </v-list-item>
+        
+    </v-list>
+    <v-divider></v-divider>
+    
+        <div class="post-toc">
+            <a href="/2023/05/12/Notes-volumetri-literature/" class="toc-header">Table of Contents</a>
+            <div class="toc-content">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Notes-for-Voxblox"><span class="toc-number">1.</span> <span class="toc-text">Notes for Voxblox</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#abstract"><span class="toc-number">1.1.</span> <span class="toc-text">abstract</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#intro"><span class="toc-number">1.2.</span> <span class="toc-text">intro</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#related-work"><span class="toc-number">1.3.</span> <span class="toc-text">related work</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#system"><span class="toc-number">1.4.</span> <span class="toc-text">system</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TSDF"><span class="toc-number">1.5.</span> <span class="toc-text">TSDF</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#weighting"><span class="toc-number">1.5.1.</span> <span class="toc-text">weighting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#merging"><span class="toc-number">1.5.2.</span> <span class="toc-text">merging</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8ETSDF%E5%88%B0ESDF"><span class="toc-number">1.6.</span> <span class="toc-text">从TSDF到ESDF</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E6%96%B9%E6%B3%95"><span class="toc-number">1.6.1.</span> <span class="toc-text">构建方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E6%9D%A5%E6%BA%90"><span class="toc-number">1.6.2.</span> <span class="toc-text">误差来源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">1.7.</span> <span class="toc-text">实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TSDF-1"><span class="toc-number">1.7.1.</span> <span class="toc-text">TSDF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ESDF"><span class="toc-number">1.7.2.</span> <span class="toc-text">ESDF</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E7%BB%93%E6%9E%9C"><span class="toc-number">1.7.2.1.</span> <span class="toc-text">仿真结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%99%85"><span class="toc-number">1.7.2.2.</span> <span class="toc-text">实际</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E4%BA%BA%E6%9C%BA%E9%A3%9E%E8%A1%8C"><span class="toc-number">1.8.</span> <span class="toc-text">无人机飞行</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Notes-for-FIEASTA"><span class="toc-number">2.</span> <span class="toc-text">Notes for FIEASTA</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#related-work-1"><span class="toc-number">3.</span> <span class="toc-text">related work</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#data-structure"><span class="toc-number">4.</span> <span class="toc-text">data structure</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8"><span class="toc-number">4.0.1.</span> <span class="toc-text">双向链表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">4.1.</span> <span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0occupancy"><span class="toc-number">4.1.1.</span> <span class="toc-text">更新occupancy</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%BB%86%E8%8A%82"><span class="toc-number">4.2.</span> <span class="toc-text">代码细节</span></a></li></ol></li></ol>
+            </div>
+        </div>
+    
+
+    <div id="footer">
+        <div class="footer-social">
+            
+                
+                <v-btn icon href="/josephchen@link.cuhk.edu.hk" target="_blank">
+                    <v-icon>fas fa-envelope</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="https://github.com/jinxer000" target="_blank">
+                    <v-icon>fab fa-github</v-icon>
+                </v-btn>
+            
+                
+                <v-btn icon href="http://www.mae.cuhk.edu.hk/~usr/" target="_blank">
+                    <v-icon>fab fa-linkedin</v-icon>
+                </v-btn>
+            
+        </div>
+        <v-divider></v-divider>
+        <div class="footer-content">
+            
+                <span id="busuanzi_container_site_uv" style="display: none;"> 
+                    Total Visitors <span id="busuanzi_value_site_uv"></span>
+                </span>
+                <br>
+            
+            <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a></span><br>
+            <span>Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+            <span>
+                &copy; 2019 - 2023 
+                Joseph
+            </span>
+        </div>
+    </div>
+</div>
+
+                        </v-col>
+                        <v-col cols="12" md="10">
+                            <v-row>
+  <v-col cols="12" md="8" align-self="end">
+    <div id="site-header">
+      <div id="site-title">
+        <a href="/" rel="home">Yizhou (Joseph) Chen</a>
+      </div>
+      <div id="site-description"></div>
+      <div id="mobile-menu" class="d-block d-md-none">
+        <v-text-field label="Please type key words" data-src="search.xml" v-model="searchHeaderValue" prepend-inner-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,false)"></v-text-field>
+        <div class="mobile-mini-menu">
+          <v-btn icon href="/">
+              <v-icon>home</v-icon>
+          </v-btn>
+          <v-btn icon href="/categories/">
+              <v-icon>folder</v-icon>
+          </v-btn>
+          <v-btn icon href="/tags/">
+              <v-icon>bookmark</v-icon>
+          </v-btn>
+          <v-btn icon @click="SetNightMode">
+              <v-icon>{{ nightMode }}</v-icon>
+          </v-btn>
+          
+            
+            <v-btn icon href="/archives/">
+              <v-icon>archive</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="/about/">
+              <v-icon>account_circle</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="https://github.com/JINXER000/GIE-mapping">
+              <v-icon>rss_feed</v-icon>
+            </v-btn>
+          
+            
+            <v-btn icon href="https://garybear.cn/hexo-theme-insulin/#/">
+              <v-icon>insert_drive_file</v-icon>
+            </v-btn>
+          
+        </div>
+      </div>    
+    </div>
+  </v-col>  
+  <v-col cols="4" align-self="end" class="d-none d-md-block">
+    <v-col align-self="end">
+      <v-text-field label="Please type key words" data-src="search.xml" v-model="searchHeaderValue" prepend-icon="search" clearable clear-icon="clear" @keydown.enter="EnterSearch(searchHeaderValue,false)"></v-text-field>
+    </v-col> 
+  </v-col>
+</v-row>
+
+                            <v-card class="elevation-2 post-card">
+    
+    
+        <div class="post-header">
+  <a class="post-header-title font-weight-medium" href="/2023/05/12/Notes-volumetri-literature/">Notes_volumetri_literature</a>
+  <div class="post-header-meta">   
+    <span>
+      <v-icon color="">event</v-icon>
+      Posted on:&nbsp;2023-05-12
+    </span>
+    <span>
+      <v-icon color="">event_available</v-icon>
+      Edited on:&nbsp;2023-05-12
+    </span>
+    <span>
+      <v-icon color="">folder</v-icon>
+      In:&nbsp;Uncategorized
+    </span>
+    
+    <span>
+      <v-icon color="">visibility</v-icon>
+      Views:&nbsp;<span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+    </span>
+    
+  </div>
+</div>
+
+    
+    
+    
+    
+    <div class="post-content typo">
+        <h1 id="Notes-for-Voxblox"><a href="#Notes-for-Voxblox" class="headerlink" title="Notes for Voxblox"></a>Notes for Voxblox</h1><h2 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h2><p>MAV构建ESDF来规划轨迹以及避障。本文提出使用TSDF来生成ESDF。此方法比octomap快，准确。代码开源，可以实时在CPU运行。</p>
+<h2 id="intro"><a href="#intro" class="headerlink" title="intro"></a>intro</h2><p>路径规划算非常快，可以deal复杂环境。但是需要环境中每个障碍物距离信息，以及距离梯度。octomap可以计算这些，但是map大小必须事先给定，不能增量建图。</p>
+<p>TSDF和ESDF不同：使用了projective distance。只在truncation radius内计算距离。</p>
+<h2 id="related-work"><a href="#related-work" class="headerlink" title="related work"></a>related work</h2><p>OCtree只有occupancy的信息，不完全。像CHMOP等需要距离信息。<br>本文方法基于kinect fusion, 也就是用volumetric方法生成TSDF图。但这种方法无法增量构建，于是本文使用voxel hashing方法动态构建地图。<br>我们的目标不是构建高精地图，而是给motion planning使用。因此分辨率都比较大，来达到实时。<br>我们和gpgpu不同的是，不是完整构建TSDF之后才增量构建ESDF，而是二者都为增量，这样就比batch methods快。</p>
+<h2 id="system"><a href="#system" class="headerlink" title="system"></a>system</h2><p>使用深度相机得到彩色点云作为输入。<br>每个voxel有自己的layer，每个layer有独立的block，block在地图中有编号。hashing就是在block 位置和内存位置之间有映射关系。因此可以growing map。</p>
+<h2 id="TSDF"><a href="#TSDF" class="headerlink" title="TSDF"></a>TSDF</h2><p>把点云raycast到全局地图中，然后把每个voxel中的点的投影距离作平均。weighting就是如何把测量给平均，merging就是如何把data分组整合。</p>
+<h3 id="weighting"><a href="#weighting" class="headerlink" title="weighting"></a>weighting</h3><p>通常方法是从sensor中心ray-cast，更新weight和distance。每个scan中有1k+点整合到一个voxel里。<br>KinectFusion  使用了constant weight来更新。然而，本文结合了相机模型，设计了一个W_quad，其中在surface后面的话就会&#x3D;&#x3D;0.<br>在多视角观察到表面的时候，减少了没观察到的voxel的影响。</p>
+<h3 id="merging"><a href="#merging" class="headerlink" title="merging"></a>merging</h3><p>有两种方法把pointcloud group到voxel中：raycasting 和projection mapping。raycasting从相机光心发出，之后更新所有照射到的区域。projection mapping把提速project到图片上，比较voxel–center的距离和depth。这个方法更快，但是对大体素会产生混叠效应。</p>
+<p>本文方法，grouped raycasting，加速了raycasting。对每一个scan，将其投影到一个voxel，之后将同一个voxel中所有point取平均，只作一次raycasting。</p>
+<h2 id="从TSDF到ESDF"><a href="#从TSDF到ESDF" class="headerlink" title="从TSDF到ESDF"></a>从TSDF到ESDF</h2><h3 id="构建方法"><a href="#构建方法" class="headerlink" title="构建方法"></a>构建方法</h3><p>用了wave-front， 就是BFS， 周围格子是26联通。两种传播方法：raise和lower。当TSDF中新距离比之前ESDF中距离大的时候，将Voxel加到raise queue中。则voxel以及其children都要是invalidated。如此传播直到没有voxel的parent是invalidated。<br>lower传播就是一个新voxel进来，或者之前观测到的voxel比当前值要小。邻近的voxel更新，根据与当前voxel的距离。当没有voxel距离可以比邻居更小，传播停止。</p>
+<h3 id="误差来源"><a href="#误差来源" class="headerlink" title="误差来源"></a>误差来源</h3><ul>
+<li>projective distance。光线到表面的距离要大于光线到表面的垂直最短距离。<br>虽然有误差，但是多视角观察后，误差可以很小。做了蒙特拉洛分析（？？？？）</li>
+<li>quasi-Euclidean distance. 因为是propogate的，所以只有上下左右斜边这么计算。<br>而它带来的速度增益很大，所以trade-off很值得。</li>
+</ul>
+<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><h3 id="TSDF-1"><a href="#TSDF-1" class="headerlink" title="TSDF"></a>TSDF</h3><p>grouped octomap虽然比原本快，但还是没有TSDF方法快，因为tree是层级结构，查找用时还是O(logn)，而TSDF是O（1）.</p>
+<p>比较了不同weight的效果差异，不同方法(raycast, octomap)带来的时间差异。</p>
+<h3 id="ESDF"><a href="#ESDF" class="headerlink" title="ESDF"></a>ESDF</h3><h4 id="仿真结果"><a href="#仿真结果" class="headerlink" title="仿真结果"></a>仿真结果</h4><p>使用了一个球，三个平面，一个立方体来进行仿真。</p>
+<h4 id="实际"><a href="#实际" class="headerlink" title="实际"></a>实际</h4><p>euroc结果。<br>得出结论，单voxel band，quansi-euclidean distance，优先队列，这些技术更好。</p>
+<h2 id="无人机飞行"><a href="#无人机飞行" class="headerlink" title="无人机飞行"></a>无人机飞行</h2><p>4hz,。<br>无人机5min的球，球内un-obsv的voxel为occupied。<br>因为无法知道自己所处位置的情况，设一个1m的球，球内所有un-obsv的voxel为free。</p>
+<h1 id="Notes-for-FIEASTA"><a href="#Notes-for-FIEASTA" class="headerlink" title="Notes for FIEASTA"></a>Notes for FIEASTA</h1><h1 id="related-work-1"><a href="#related-work-1" class="headerlink" title="related work"></a>related work</h1><p>地图有grid map, octomap, point cloud, topomap(slam feature), sparse map(esdf based topomap), nanomap(local)</p>
+<p>motion plan 不需要一直计算esdf. 应该fuse map to global。 </p>
+<p>对于voxblox改进：</p>
+<ul>
+<li>减小了两种误差. 第二种没了，但第一种还有。</li>
+<li>不用TSDF，更容易量化和改进。</li>
+</ul>
+<h1 id="data-structure"><a href="#data-structure" class="headerlink" title="data structure"></a>data structure</h1><p><img src="https://img-blog.csdnimg.cn/20200106165842544.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pJTlhFUg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>如果内存够，直接把voxel存到数组中。内存不够，需要有从voxel coord 到Voxel information structure的指针的一个映射，就是hashmap. 但是查找需要很多时间。<br>一个tradeoff就是用voxel hashing, 只有block才用hash，这样会更快。使用(bitwise会更快，把block_size&#x3D;2,4,8,,,)。</p>
+<h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><p>所有VIS都在DLL中。先根据坐标查找VIS，再增加或者删除VIS，总共是O(1)时间。<br>为啥用DLL？ 所有新发现但是没有被更新(esdf)的voxel都加到DLL中（插到头部。）一般先来的都是vironoi 里边的，后来的（靠近头部）都是外围的。<br>每一个DLL都对应一个特定的obs, DLL中所有元素到该OBS都最短，也就是obs是vironoi中心。</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="更新occupancy"><a href="#更新occupancy" class="headerlink" title="更新occupancy"></a>更新occupancy</h3><p>alg2:<br>新发现的voxel，更新occupancy, 产生insert queue和delete queue，二者生成需要Update esdf的update queue。<br>alg1:  根据update queue来更新esdf<br>update queue一开始是obs，之后成为BFS的frontier。uodate queue中弹出curr,使用BFS来更新cur的nbr的最近obs信息，如果nbr的最近obs被更新，那么将其push到update queue中，后面再更新nbr的nbr</p>
+<p>alg3：要考虑没有observe，但是以前observe过的obs的影响，要用alg3来处理update queue。具体是，从update queue弹出一个cur，如果cur的邻居的最近obs到cur的距离比cur到自己的最近obs的距离要小，那么说明cur记录的最近obs信息并不准确，不能直接用作更新EDF, 需要更新cur的最近obs信息，再将cur加到update queue中，跳过下面步骤continue，直到cur的最近obs的信息完全正确，再转到alg1 line4。</p>
+<h2 id="代码细节"><a href="#代码细节" class="headerlink" title="代码细节"></a>代码细节</h2><p>block_bit&#x3D;3<br>block_&#x3D;8<br>block_size_&#x3D;8x8x8</p>
+<p>在收到depth时候，将其和pos一起同步，之后进行多线程的raycast（用了<code>std::list&lt; std::thread &gt;.emplace_back</code>），但没有生成occupancy map, 而只是在setOccupancy中放到了occupancyQueue中。在更新ESDF的时候才更新occupancy map.</p>
+<p>ESDF是固定频率更新的。更新occupancy map,再更新ESDF，用的就是上面说的3个alg啦。</p>
+<p>voxel_hashing代码再ESDFMap.cpp:732.  ，findandInsert里面。这个函数作用就是一个从vox到内存中idx的映射。具体是计算vox在block中的位置idx_in_block,再计算vox所属于block的id(block_id)，根据这两个id来计算内存中的id。但这个内存在哪里分配的呢？<br>答案是，都是在ESDFMap中分配的，每一个都分配的reserve_size（默认是1000000）的vector。注意在每次findandinsert开始，都需要检查现在的block_size*block_num是不是&gt;reserve_size，是的话说明不够，vector内存也就是reserve_size要x2。</p>
+<p>hash_table定义是这样紫：<br>param 1是hash_key，用来查找的。<br>param 2传入的是count，也就是index of the Voxel Information Structure.<br>param 3传入的是hash的方法，如何把3D voxel coord map到index。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::unordered_map&lt;Eigen::Vector3i, <span class="type">int</span>, MatrixHash&lt;Eigen::Vector3i&gt;&gt; hash_table_;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>MatrixHash是这样子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> transform_&gt;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">MatrixHash</span> : std::unary_function&lt;transform_, <span class="type">size_t</span>&gt; &#123;</span><br><span class="line">  <span class="function">std::<span class="type">size_t</span> <span class="title">operator</span><span class="params">()</span><span class="params">(transform_ <span class="type">const</span> &amp;matrix)</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Note that it is oblivious to the storage order of Eigen matrix (column- or</span></span><br><span class="line">    <span class="comment">// row-major). It will give you the same hash value for two different matrices if they</span></span><br><span class="line">    <span class="comment">// are the transpose of each other in different storage order.</span></span><br><span class="line">    <span class="type">size_t</span> seed = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">size_t</span> i = <span class="number">0</span>; i &lt; matrix.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">      <span class="keyword">auto</span> elem = *(matrix.<span class="built_in">data</span>() + i);</span><br><span class="line">      seed ^= std::<span class="built_in">hash</span>&lt;<span class="keyword">typename</span> transform_::Scalar&gt;()(elem) + <span class="number">0x9e3779b9</span> + (seed &lt;&lt; <span class="number">6</span>) + (seed &gt;&gt; <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> seed;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这个transform_太迷惑了，不是表示位姿，而是一个形参，跟T一样。<br>unary_function将这个hash函数变成一个一元运算符（这样说不专业）。专业的说，operator成员函数继承unary_function这个基类，成为一个实例被调用。具体可看<a target="_blank" rel="noopener" href="https://blog.csdn.net/feng1790291543/article/details/54645248">csdn</a>. 感觉就是语法特殊了点，没啥优越性？</p>
+<p>如果当前更新的vox坐标对应的block_id在hash table中找不到，那么要在hash table中加一个block。block中每一个vox都赋值到vox_buffer(内存)里，這是爲了在可視化以及debug的時候方便寻秩访问。最后返回vox在内存中的idx。<br>如果找到了，那么返回在内存中的地址。方法是</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> tmp-&gt;second + idx_in_block;</span><br></pre></td></tr></table></figure>
+<p>tmp-&gt;second就是block的首地址，加上偏置以后就是vox的id，在vox_buffer里面查找一下就是值了。</p>
+
+    </div>
+    <!--文末结束语-->
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="fas fa-heart"></i> The End --- </div>
+    
+    <!--页脚广告-->
+    
+    <v-divider></v-divider>
+    
+    <div class="post-nav">             
+              
+          
+            <div class="post-nav-button float-right">
+                <a class="font-weight-bold text-right" href="/2023/04/24/thesis-workflow/">      
+                    thesis workflow
+                </a>
+                <v-icon>chevron_right</v-icon>
+            </div>
+        
+    </div>
+</v-card>
+
+
+
+        
+                            <div id="mobile-footer" class="d-block d-md-none">
+                                <v-divider></v-divider>
+                                <div id="mobile-footer-content">
+                                    <span>Theme: <a target="_blank" rel="noopener" href="https://github.com/kb1000fx/hexo-theme-insulin">Insulin</a> &nbsp; Powered by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></span><br>
+                                    <span> &copy; 2019 - 2023 Joseph</span>
+                                </div>
+                            </div>                   
+                        </v-col>                                            
+                    </v-row>
+                </v-container>
+            </v-content>
+        </v-app>
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.2.30"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-base64@3.5.2/base64.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+
+</body>
+</html>
