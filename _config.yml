@@ -194,6 +194,7 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - _news/announcement_*.md
 keep_files:
   - CNAME
   - .nojekyll
@@ -646,5 +647,5 @@ jsonresume:
   - interests
   - references
 
-exclude:
-  - _news/announcement_*.md
+
+
