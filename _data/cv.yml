@@ -35,6 +35,10 @@
 - title: Open Source Projects
   type: time_table
   contents:
+    - title: <a href="https://github.com/Dr-LfD/Dr-LfD-dualArm">Dr-LfD-dualArm</a>
+      description: "Open-source code for the T-RO paper: Decompose and Reorganize: Planning with Primitives and Visuomotor Policies Learned from Demonstrations."
+      languages:
+        - Python
     - title: <a href="https://github.com/JINXER000/multiple-task-temporal-logic-planning">multiple-task-temporal-logic-planning</a>
       description: "Open-source code for IROS2023 paper: An interactive system for multiple-task linear temporal logic path planning."
       languages:
