@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -376,6 +376,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-our-paper-bikc-bimanual-hierarchical-imitation-with-keypose-conditioned-coordination-aware-consistency-policies-has-been-accepted-by-t-ase-2025",
           title: 'Our paper “BiKC+: Bimanual Hierarchical Imitation with Keypose-Conditioned Coordination-Aware Consistency Policies” has been...',
+          description: "",
+          section: "News",},{id: "news-our-paper-semantically-structured-mixture-of-experts-for-compositional-robotic-manipulation-has-been-accepted-by-rss-2026",
+          title: 'Our paper “Semantically Structured Mixture-of-Experts for Compositional Robotic Manipulation” has been accepted by...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
