@@ -39,7 +39,7 @@
       description: "Open-source code for IROS2023 paper: An interactive system for multiple-task linear temporal logic path planning."
       languages:
         - Python
-    - title: <a href="https://github.com/JINXER000/GPU-accelearted-incremental-ESDF">GPU-accelearted-incremental-ESDF</a>
+    - title: <a href="https://github.com/JINXER000/GIE-mapping">GIE-mapping</a>
       description: "Open-source code for RAL 2022 paper: GPU-accelerated Incremental Euclidean Distance Fields for Online Motion Planning of Mobile Robots."
       languages:
         - CUDA C
@@ -51,6 +51,7 @@
   contents:
     - year: 2024
       items:
+        - Best Paper in Automation Finalist, IEEE International Conference on Robotics and Biomimetics (ROBIO)
         - Research Talent Hub for ITF projects, Hong Kong Research Grants Council
     - year: 2023
       items:
@@ -65,6 +66,9 @@
 - title: Academic Services
   type: nested_list
   contents:
+    - title: Session Chair
+      items:
+        - "Invited Session: Embodied Intelligence and Autonomous Systems for Next-Generation Smart Cities, ICCA 2026"
     - title: Journal Reviewer
       items:
         - IEEE Transactions on Robotics (T-RO)
