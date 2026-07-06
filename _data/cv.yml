@@ -15,12 +15,12 @@
       institution: The Chinese University of Hong Kong, Hong Kong, China
       year: 2019 - 2023
       description:
-        - Supervisors: Prof. Ben M. Chen and Dr. Alan Lam
+        - "Supervisors: Prof. Ben M. Chen and Dr. Alan Lam"
     - title: B. Eng. in Automation
       institution: Nanjing University of Aeronautics and Astronautics, Nanjing, China
       year: 2015 - 2019
       description:
-        - Advisors: Prof. Chen Fuyang and Prof. Wang Biao 
+        - "Advisors: Prof. Chen Fuyang and Prof. Wang Biao"
 
 - title: Experience
   type: time_table
@@ -29,7 +29,7 @@
       institution: The University of Hong Kong, Hong Kong, China
       year: 2023 - now
       description:
-        - Supervisors: Prof. Jia Pan
+        - "Supervisors: Prof. Jia Pan"
 
 
 - title: Open Source Projects
