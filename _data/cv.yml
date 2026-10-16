@@ -5,32 +5,71 @@
       value: Chen Yizhou
     - name: Address
       value: The University of Hong Kong, School of Computing and Data Science, Room 416, Cyberport F core, Pokfulam, Hong Kong
+    - name: Phone
+      value: (+852) 97004508
     - name: E-mail
       value: yzhchen@hku.hk
+    - name: Homepage
+      value: <a href="https://jinxer000.github.io/">jinxer000.github.io</a>
+    - name: GitHub
+      value: <a href="https://github.com/JINXER000">github.com/JINXER000</a>
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
+    - title: Ph.D. in Mechanical and Automation Engineering
       institution: The Chinese University of Hong Kong, Hong Kong, China
       year: 2019 - 2023
       description:
-        - "Supervisors: Prof. Ben M. Chen and Dr. Alan Lam"
-    - title: B. Eng. in Automation
+        - "Supervisor: Prof. Ben M. Chen"
+        - "Research Focus: Temporal Logic-based Task and Motion Planning"
+    - title: B.S. in Automation
       institution: Nanjing University of Aeronautics and Astronautics, Nanjing, China
       year: 2015 - 2019
-      description:
-        - "Advisors: Prof. Chen Fuyang and Prof. Wang Biao"
 
 - title: Experience
   type: time_table
   contents:
-    - title: Postdoctoral Researcher
+    - title: Postdoctoral Fellow
       institution: The University of Hong Kong, Hong Kong, China
       year: 2023 - now
       description:
-        - "Supervisors: Prof. Jia Pan"
+        - "Supervisor: Prof. Jia Pan"
+        - "Research Focus: Long-horizon, generalizable bimanual robotic manipulation"
 
+- title: Research Projects
+  type: time_table
+  contents:
+    - title: "Demonstration Skill Decomposition and Online Reorganization (ITF Research Talent Hub), Project Lead"
+      year: 2024 - now
+      description:
+        - "<b>Overview</b>: Designed the TAMP-gated multi-skill imitation learning framework; developed algorithms for skill decomposition, geometric safety checking, and online replanning; led real-world experimental validations on dual-arm robotic hardware."
+        - "<b>Result</b>: Decomposed expert demonstrations into reusable primitives for online task reorganization, reaching over 4x the success rate of the mainstream pi-0.5 baseline in few-shot and out-of-distribution settings; conditionally accepted by IEEE T-RO and released as open source."
+      linkitems:
+        - linkname: Homepage / Code
+          link: https://dr-lfd.github.io/DR-LfD-website/
+    - title: "Fine Bimanual Manipulation for Flexible Assembly (Huawei), Co-Lead"
+      year: 2024 - 2025
+      description:
+        - "<b>Overview</b>: Designed a VLM-based task understanding module for bimanual coordination mode recognition and keypose classification; introduced a consistency model to reduce policy inference latency; assisted in deploying and validating the algorithms on dual-arm Franka robot setups."
+        - "<b>Result</b>: Deployed on dual-arm Franka platforms and accepted by IEEE T-ASE (Funding: RMB 1,000,000)."
+      linkitems:
+        - linkname: Code
+          link: https://github.com/JoanaHXU/BiKC-plus
+    - title: "Intelligent Navigation and Robust Flight Control for Unmanned Systems (Hong Kong RGC-GRF), Participant / Direction Lead"
+      description:
+        - "<b>Overview</b>: Formulated and implemented CUDA-accelerated incremental ESDF algorithms; built the GPU parallel mapping and online planning pipeline; conducted deployment and flight/driving tests on UGV and UAV hardware platforms."
+        - "<b>Result</b>: Achieved a 3x speedup in distance field updating and a 10x improvement in environment representation precision; released publicly one year ahead of NVIDIA nvblox with comparable mapping speed and higher distance-field precision; published in RA-L 2022 and presented at RCAR 2021 and IROS 2022."
+      linkitems:
+        - linkname: Code
+          link: https://github.com/JINXER000/GIE-mapping
+    - title: "Advanced Motion Planning for Multi-Agent Systems Coordination (Hong Kong RGC-GRF), Participant / Direction Lead"
+      description:
+        - "<b>Overview</b>: Developed sampling-based task and motion planning algorithms under linear temporal logic (LTL) constraints for multi-stage tasks with strict temporal and safety requirements; built an interactive multi-task system supporting online goal and constraint adjustments; validated on mobile robots, quadrotors, and aerial manipulators."
+        - "<b>Result</b>: Cut replanning reaction time by 5x; published at ICRA 2023, IROS 2023, and ROBIO 2024 (Best Paper in Automation Finalist), and filed as a Chinese invention patent."
+      linkitems:
+        - linkname: Code
+          link: https://github.com/JINXER000/multiple-task-temporal-logic-planning
 
 - title: Open Source Projects
   type: time_table
@@ -40,53 +79,91 @@
       languages:
         - Python
     - title: <a href="https://github.com/JINXER000/multiple-task-temporal-logic-planning">multiple-task-temporal-logic-planning</a>
-      description: "Open-source code for IROS2023 paper: An interactive system for multiple-task linear temporal logic path planning."
+      description: "Open-source code for IROS 2023 paper: An interactive system for multiple-task linear temporal logic path planning."
       languages:
         - Python
     - title: <a href="https://github.com/JINXER000/GIE-mapping">GIE-mapping</a>
-      description: "Open-source code for RAL 2022 paper: GPU-accelerated Incremental Euclidean Distance Fields for Online Motion Planning of Mobile Robots."
+      description: "Open-source code for RA-L 2022 paper: GPU-accelerated Incremental Euclidean Distance Fields for Online Motion Planning of Mobile Robots."
       languages:
         - CUDA C
         - C++
 
+- title: Patents
+  type: time_table
+  contents:
+    - title: "System and Method for Task Planning of Mobile Robots"
+      year: Feb 2024
+      description:
+        - "Chinese Invention Patent, Co-Inventor / Second Lead (advisor as first inventor)"
+
+- title: Skills
+  type: nested_list
+  contents:
+    - title: Programming
+      items:
+        - C, C++, Python, MATLAB, CUDA C
+    - title: Robotics & Learning
+      items:
+        - Motion planning, task and motion planning, imitation learning, reinforcement learning, model predictive control
+    - title: Simulation & Middleware
+      items:
+        - MuJoCo, PyBullet, ROS
+    - title: Hardware
+      items:
+        - 3D printing, embedded system design, PCB circuit design
 
 - title: Honors and Awards
   type: time_table
   contents:
     - year: 2024
       items:
+        - Research Talent Hub Scholar, Innovation and Technology Fund (ITF), Hong Kong
         - Best Paper in Automation Finalist, IEEE International Conference on Robotics and Biomimetics (ROBIO)
-        - Research Talent Hub for ITF projects, Hong Kong Research Grants Council
     - year: 2023
       items:
-        - Outstanding Reviewer Award, Unmanned Systems
+        - Outstanding Reviewer Award, Unmanned Systems Journal
     - year: 2020
       items:
         - Postgraduate Scholarship, The Chinese University of Hong Kong
     - year: 2018
       items:
-        - China National Scholarship, Ministry of Education of China
+        - China National Scholarship (Undergraduate), Ministry of Education of China
 
 - title: Academic Services
   type: nested_list
   contents:
+    - title: Associate Editor
+      items:
+        - "IEEE International Conference on Robotics and Automation (ICRA) 2027"
+        - "IEEE International Conference on Control and Automation (ICCA) 2024"
     - title: Session Chair
       items:
-        - "Invited Session: Embodied Intelligence and Autonomous Systems for Next-Generation Smart Cities, ICCA 2026"
+        - "Invited Session: Embodied Intelligence and Autonomous Systems for Next-Generation Smart Cities, IEEE International Conference on Control and Automation (ICCA) 2026"
     - title: Journal Reviewer
       items:
         - IEEE Transactions on Robotics (T-RO)
-        - IEEE Transactions on Automatic Control (TAC)
-        - IEEE Transactions on Cybernetics
         - IEEE Robotics and Automation Letters (RA-L)
-        - IEEE Transactions on Intelligent Transportation Systems (T-ITS)
-        - International Journal of Robust and Nonlinear Control
+        - IEEE Transactions on Cybernetics
         - IEEE Control Systems Letters (CSL)
-    - title: Conference Service
+        - Unmanned Systems
+    - title: Conference Reviewer
       items:
-        - Associate Editor, IEEE International Conference on Control and Automation (ICCA)
-        - "Robotics: Science and Systems (RSS)"
+        - Robotics: Science and Systems (RSS)
         - IEEE International Conference on Robotics and Automation (ICRA)
         - IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)
-        - IEEE Conference on Decision and Control (CDC)
+        - IEEE International Conference on Control and Automation (ICCA)
         - IEEE International Conference on Unmanned Aircraft Systems (ICUAS)
+
+- title: Supervision and Teaching
+  type: nested_list
+  contents:
+    - title: Research Supervision
+      items:
+        - "PhD student, The University of Hong Kong, 2025 - 2026. Co-supervised atomic skill design and demonstration segmentation, and designed the real-world experiments; output published at RSS 2026."
+        - "Master's student, The Chinese University of Hong Kong, 2020. Thesis on UAV swarms."
+        - "Undergraduate student, The Chinese University of Hong Kong, 2022. Thesis on memory optimization for GPU mapping."
+    - title: Teaching Assistant, The Chinese University of Hong Kong (2020 - 2022)
+      items:
+        - "MAEG3060 Introduction to Robotics"
+        - "MAEG3080 Fundamentals of Machine Intelligence"
+        - "MAEG3050 Introduction to Control Systems"

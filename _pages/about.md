@@ -31,13 +31,14 @@ latest_posts:
 
 
 
-I am a postdoctoral fellow at School of Computing and Data Science, The University of Hong Kong, under the leadership of [Prof. Jia Pan](https://www.cs.hku.hk/people/academic-staff/jpan). 
-Before that, I obtained my Ph.D. degree at Mechanical and Automation Engineering department, The Chinese University of Hong Kong, supervised by [Prof. Ben M. Chen](https://www4.mae.cuhk.edu.hk/peoples/chen-benmei/). 
+I am a postdoctoral fellow at the School of Computing and Data Science, The University of Hong Kong, under the leadership of [Prof. Jia Pan](https://www.cs.hku.hk/people/academic-staff/jpan).
+Before that, I obtained my Ph.D. degree at the Department of Mechanical and Automation Engineering, The Chinese University of Hong Kong, supervised by [Prof. Ben M. Chen](https://www4.mae.cuhk.edu.hk/peoples/chen-benmei/).
 
+My research focuses on **long-horizon, generalizable bimanual robotic manipulation**. I design TAMP-gated multi-skill imitation learning frameworks that decompose expert demonstrations into reusable primitives and reorganize them online, and I validate the algorithms on real dual-arm robotic hardware.
 
 ## Research Interests
 
- 
-- During Ph.D., I dedicated myself in developing intelligent robot planning and perception algorithms that enables real-world tasking. 
-- After graduation, I shifted my interest in more challenging manipulation tasks that involves intricate physical constraints and human preference. 
-- My current research interests lies in enhancing the performance of long-horizon manipulation tasks. 
+- **Robot learning**: imitation learning, visuomotor policies, skill decomposition and online reorganization.
+- **Task and motion planning**: temporal logic (LTL) constrained planning, sampling-based TAMP, real-time replanning.
+- **Perception and mapping**: GPU-accelerated incremental ESDF, real-time mapping for online motion planning.
+- **Hardware and deployment**: dual-arm manipulation platforms, UAV/UGV systems, embedded and PCB design.

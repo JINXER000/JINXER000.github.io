@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ROBIO 2024 Best Paper Finalist
+title: T-ASE 2025 Paper Accepted
 date: 2025-12-01 09:00:00 -0400   # change to your date/time
 inline: true
 related_posts: false
