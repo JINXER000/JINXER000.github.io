@@ -29,16 +29,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
+Dr. Yizhou Chen is a Postdoctoral Fellow at the School of Computing and Data Science, The University of Hong Kong, working with [Prof. Jia Pan](https://www.cs.hku.hk/people/academic-staff/jpan). His research interests span robotics and machine learning, focusing on **long-horizon, generalizable bimanual manipulation**, **imitation learning**, and **task and motion planning**. His work combines learned visuomotor skills with planning and includes GPU-accelerated mapping for real-time robot motion planning.
 
+Yizhou received his Ph.D. (2019–2023) from the Department of Mechanical and Automation Engineering at The Chinese University of Hong Kong, advised by [Prof. Ben M. Chen](https://www4.mae.cuhk.edu.hk/peoples/chen-benmei/). 
 
-I am a postdoctoral fellow at the School of Computing and Data Science, The University of Hong Kong, under the leadership of [Prof. Jia Pan](https://www.cs.hku.hk/people/academic-staff/jpan).
-Before that, I obtained my Ph.D. degree at the Department of Mechanical and Automation Engineering, The Chinese University of Hong Kong, supervised by [Prof. Ben M. Chen](https://www4.mae.cuhk.edu.hk/peoples/chen-benmei/).
-
-My research focuses on **long-horizon, generalizable bimanual robotic manipulation**. I design TAMP-gated multi-skill imitation learning frameworks that decompose expert demonstrations into reusable primitives and reorganize them online, and I validate the algorithms on real dual-arm robotic hardware.
-
-## Research Interests
-
-- **Robot learning**: imitation learning, visuomotor policies, skill decomposition and online reorganization.
-- **Task and motion planning**: temporal logic (LTL) constrained planning, sampling-based TAMP, real-time replanning.
-- **Perception and mapping**: GPU-accelerated incremental ESDF, real-time mapping for online motion planning.
-- **Hardware and deployment**: dual-arm manipulation platforms, UAV/UGV systems, embedded and PCB design.
+Yizhou's honors include **Best Paper in Automation Finalist** at IEEE ROBIO 2024 and **Research Talent Hub Scholar** under Hong Kong's Innovation and Technology Fund (2024). His academic service includes **Associate Editor for ICRA 2027 and ICCA 2024**, as well as reviewing for journals and conferences including IEEE T-RO, IEEE RA-L, RSS, ICRA, and IROS.
