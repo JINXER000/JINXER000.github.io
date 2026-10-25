@@ -29,7 +29,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Dr. Yizhou Chen is a Postdoctoral Fellow at the School of Computing and Data Science, The University of Hong Kong, working with [Prof. Jia Pan](https://www.cs.hku.hk/people/academic-staff/jpan). His research interests span robotics and machine learning, focusing on **long-horizon, generalizable bimanual manipulation**, **imitation learning**, and **task and motion planning**. His work combines learned visuomotor skills with planning and includes GPU-accelerated mapping for real-time robot motion planning.
+Dr. Yizhou Chen is a Postdoctoral Fellow at the School of Computing and Data Science, The University of Hong Kong, working with [Prof. Jia Pan](https://www.cs.hku.hk/people/academic-staff/jpan). His research interests span robotics and machine learning, focusing on **long-horizon, generalizable bimanual manipulation**, **imitation learning**, and **task and motion planning**. 
 
 Yizhou received his Ph.D. (2019–2023) from the Department of Mechanical and Automation Engineering at The Chinese University of Hong Kong, advised by [Prof. Ben M. Chen](https://www4.mae.cuhk.edu.hk/peoples/chen-benmei/). 
 
